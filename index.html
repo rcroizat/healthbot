@@ -11,7 +11,20 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 
 		<script type="text/javascript" src="./js/noty/packaged/jquery.noty.packaged.js"></script>
-
+		<link rel="manifest" href="./manifest.json"><!-- 
+		<script type="text/javascript" src="./OneSignalSDKWorker.js"></script>
+		<script type="text/javascript" src="./OneSignalSDKUpdaterWorker.js"></script> -->
+		  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+ <script>
+    var OneSignal = OneSignal || [];
+    OneSignal.push(["init", {
+      appId: "b1777423-b2eb-473a-98e9-b730d07ef839",
+      autoRegister: true,
+      notifyButton: {
+        enable: true /* Set to false to hide */
+      }
+    }]);
+  </script>
 <script type="text/javascript">
 
     function notif() {
@@ -32,7 +45,16 @@
 </script>
 	</head>
 	<body>
-		
+		<a href="#" id="subscribe-link">Subscribe to Notifications</a>  
+  <script>
+    // This example assumes you've already initialized OneSignal
+    function subscribe() {
+      OneSignal.push(["registerForPushNotifications"]);
+      event.preventDefault();      
+    }
+    document.getElementById("subscribe-link").addEventListener('click', subscribe);
+  </script>
+</body>
 					<h1 id="head">HealthBot Back Administration</h1>
 		
 		<ul id="navigation">

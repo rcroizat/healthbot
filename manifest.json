@@ -1,0 +1,7 @@
+{
+  "name": "Healthbot",
+  "short_name": "Healthbot",
+  "start_url": "/",
+  "display": "standalone",
+  "gcm_sender_id": "253773045098"
+}
